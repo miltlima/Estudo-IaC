@@ -1,5 +1,5 @@
 #
-# Provisionamento Multi Região no AWS usando Terraform
+# Provisionamento AZ no AWS usando Terraform
 provider "aws" {
   version = "~> 2.0"
   region  = "us-east-1"
