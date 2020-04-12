@@ -53,7 +53,7 @@ resource "aws_instance" "vm5" {
   vpc_security_group_ids = ["${aws_security_group.acesso-ssh.id}"]
 }
 
-// Instância com depedência do Dynamo DB provisionando em região diferente
+// Instância com depedência do Dynamo DB provisionando em az diferente
 resource "aws_instance" "vm6" {
   provider = "aws.us-east-2"
   ami = "${var.amis["us-east-2"]}"
@@ -65,7 +65,7 @@ resource "aws_instance" "vm6" {
   vpc_security_group_ids = ["${aws_security_group.acesso-ssh-us-east-2.id}"]
   depends_on = ["aws_dynamodb_table.dynamodb-homologacao"]
 }
-// Teste de varíavel na Imagem e provisionamento em região diferente
+// Teste de varíavel na Imagem e provisionamento em az diferente
 resource "aws_instance" "vm7" {
   provider = "aws.us-east-2"
   ami = "${var.amis["us-east-2"]}"
